@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tournament Entry Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif; /* Changed to a simpler font */
+      background-color: #7c7e89;
+      margin: 0;
+      padding: 0;
+      color: rgb(0, 0, 0);
+    }
+    .container {
+      width: 80%;
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #bdb6b6;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    h1 {
+      text-align: center;
+      color:  #2a2828;
+      font-family: 'Press Start 2P', cursive; /* Keeping gaming font only for the header */
+      font-size: 3rem;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+    .player-group {
+      margin-bottom: 20px;
+    }
+    .player-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+    .player-group input, .player-group select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 8px;
+      border: 2px solid #444;
+      border-radius: 6px;
+      background-color: #111;
+      color: white;
+    }
+    .player-group input::placeholder {
+      color: #aaa;
+    }
+    select {
+      background-color: #111;
+    }
+    .submit-btn {
+      padding: 12px 20px;
+      background-color: #ff1500;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      width: 100%;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #e55b4c;
+    }
+    .add-player-btn {
+      padding: 10px 20px;
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .add-player-btn:hover {
+      background-color: #e55b4c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tournament Entry Form</h1>
+    <form id="tournament-form">
+      <!-- Game Selection -->
+      <div class="player-group">
+        <label for="game">Select Game:</label>
+        <select id="game" name="game" required>
+          <option value="free_fire">Free Fire</option>
+          <option value="pubg">PUBG</option>
+          <option value="cod">COD</option>
+          <option value="eafc">EAFC</option>
+          <option value="efootball">eFootball</option>
+          <option value="coc">COC</option>
+        </select>
+      </div>
+
+      <!-- Discord ID -->
+      <div class="player-group">
+        <label for="discord-id">Discord ID:</label>
+        <input type="text" id="discord-id" name="discord-id" placeholder="Enter your Discord ID" required>
+      </div>
+
+      <!-- Player 1 -->
+      <div class="player-group">
+        <label for="player1-name">Player 1 Game Name:</label>
+        <input type="text" id="player1-name" name="player1-name" placeholder="Enter Player 1 Game Name" required>
+        <label for="player1-id">Player 1 ID:</label>
+        <input type="text" id="player1-id" name="player1-id" placeholder="Enter Player 1 ID" required>
+      </div>
+
+      <!-- Player 2 -->
+      <div class="player-group">
+        <label for="player2-name">Player 2 Game Name:</label>
+        <input type="text" id="player2-name" name="player2-name" placeholder="Enter Player 2 Game Name" required>
+        <label for="player2-id">Player 2 ID:</label>
+        <input type="text" id="player2-id" name="player2-id" placeholder="Enter Player 2 ID" required>
+      </div>
+
+      <!-- Player 3 -->
+      <div class="player-group">
+        <label for="player3-name">Player 3 Game Name:</label>
+        <input type="text" id="player3-name" name="player3-name" placeholder="Enter Player 3 Game Name" required>
+        <label for="player3-id">Player 3 ID:</label>
+        <input type="text" id="player3-id" name="player3-id" placeholder="Enter Player 3 ID" required>
+      </div>
+
+      <!-- Player 4 -->
+      <div class="player-group">
+        <label for="player4-name">Player 4 Game Name:</label>
+        <input type="text" id="player4-name" name="player4-name" placeholder="Enter Player 4 Game Name" required>
+        <label for="player4-id">Player 4 ID:</label>
+        <input type="text" id="player4-id" name="player4-id" placeholder="Enter Player 4 ID" required>
+      </div>
+
+      <!-- Player 5 (optional) -->
+      <div class="player-group">
+        <label for="player5-name">Player 5 Game Name:</label>
+        <input type="text" id="player5-name" name="player5-name" placeholder="Enter Player 5 Game Name">
+        <label for="player5-id">Player 5 ID:</label>
+        <input type="text" id="player5-id" name="player5-id" placeholder="Enter Player 5 ID">
+      </div>
+
+      <!-- Player 6 (optional) -->
+      <div class="player-group">
+        <label for="player6-name">Player 6 Game Name:</label>
+        <input type="text" id="player6-name" name="player6-name" placeholder="Enter Player 6 Game Name">
+        <label for="player6-id">Player 6 ID:</label>
+        <input type="text" id="player6-id" name="player6-id" placeholder="Enter Player 6 ID">
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="submit-btn">Submit Tournament Entry</button>
+    </form>
+  </div>
+
+  <script>
+    // JavaScript to handle form submission if needed
+    document.getElementById("tournament-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form from submitting
+      alert("Tournament Entry Submitted Successfully!");
+      // Further actions can be added here, like sending data to a server
+    });
+  </script>
+</body>
+</html>

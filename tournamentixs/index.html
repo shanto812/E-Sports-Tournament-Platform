@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tournamentix -Tournament Organization</title>
+
+  <!-- 
+    - favicon link
+  -->
+  <link rel="shortcut icon" href="/assets/images/Untitled-1.png" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@400;500;700&display=swap"
+    rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+</head>
+
+<body id="top">
+
+  <header class="header">
+
+    <!-- 
+      - overlay
+    -->
+    <div class="overlay" data-overlay></div>
+
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="./assets/images/logo2.png" alt="GameX logo">
+      </a>
+
+      <button class="nav-open-btn" data-nav-open-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-nav>
+
+        <div class="navbar-top">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logobg.png" alt="GameX logo">
+          </a>
+
+          <button class="nav-close-btn" data-nav-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#hero" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="#about" class="navbar-link">About</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="" class="navbar-link">Team</a>
+            <ul class="dropdown-menu">
+              <li><a href="#teams" class="navbar-link">Winner Team</a></li>
+              <li><a href="#organization-team" class="navbar-link">Organization Team</a></li>
+            </ul>
+          </li>
+          
+          <li class="navbar-item">
+            <a href="" class="navbar-link">Tournament</a>
+            <ul class="dropdown-menu">
+              <li><a href="#events-section" class="navbar-link">Event Details</a></li>
+              <li><a href="#tournament" class="navbar-link">Tour Register</a></li>
+            </ul>
+          </li>
+          
+          <li class="navbar-item">
+            <a href="#" class="navbar-link">Accessories</a>
+            <ul class="dropdown-menu">
+              <li><a href="#gears" class="navbar-link">Gears</a></li>
+              <li><a href="#gaming-topup" class="navbar-link">Top-Up</a></li>
+            </ul>
+          </li>
+          
+
+          <li>
+            <a href="#contact" class="navbar-link">Contact</a>
+          </li>
+
+        </ul>
+
+        <ul class="nav-social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="header-actions">
+
+        <button class="btn-sign_in">
+
+          <div class="icon-box">
+            <ion-icon name="log-in-outline"></ion-icon>
+          </div>
+
+          <a href="login.html" class="login"> <span>Log-in</span></a>
+
+        </button>
+
+      </div>
+          <!-- Cart Button with Cart Icon -->
+<a href="javascript:void(0)" class="btn-cart" id="cart-button">
+  <button class="btn-cart">
+    <span>Cart<span id="item-count">0</span></span>
+  </button>
+
+  <!-- Cart Content inside the button (Initially hidden) -->
+  <div id="cart-content" class="cart-content hidden">
+    <!-- Close button -->
+    <button id="close-cart" class="close-cart-btn">&times;</button>
+    <div id="cart-items-container"></div>
+    <div class="cart-total">
+      <strong id="cart-total">Total: $0</strong>
+    </div>
+    <div class="cart-actions">
+      <button id="checkout-btn" class="btn-checkout">Checkout</button>
+      <button id="reset-cart-btn" class="btn-reset">Reset Cart</button>
+    </div>
+  </div>
+</a>
+
+        
+      </header>       
+      <!-- 
+        - #HERO
+      -->
+      <section class="hero" id="hero">
+        <div class="particle-wrapper">
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+        </div>
+      
+        <div class="container">
+          <p class="hero-subtitle animate-text">The Season 5</p>
+      
+          <h1 class="h1 hero-title animate-text">
+            Steam
+            <span class="highlight">Gaming</span>
+          </h1>
+      
+          <div class="btn-group">
+            <a href="https://www.youtube.com/@tournamentix" class="btn btn-explore">Explore
+              <span>Watch this Live</span>
+              <ion-icon name="rocket-outline"></ion-icon>
+            </a>
+          </div>
+        </div>
+      </section>
+      
+        <!-- ABOUT SECTION -->
+<section class="about" id="about">
+  <div class="container">
+    <figure class="about-banner">
+      <img src="./assets/images/about-img.png" alt="M shape" class="about-img">
+
+      <!-- Game Characters with Animation -->
+      <img src="./assets/images/character-1.png" alt="Game character" class="character character-1">
+      <img src="./assets/images/character-2.png" alt="Game character" class="character character-2">
+      <img src="./assets/images/character-3.png" alt="Game character" class="character character-3">
+    </figure>
+
+    <div class="about-content">
+      <p class="about-subtitle">Find team member</p>
+      <h2 class="about-title">Experience just for gamers <strong>offer</strong></h2>
+      <p class="about-text">
+        Nullam quis ante. Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum
+        viverra felis nunc et lorem. In auctor lobortis lacus. Phasellus gravida semper nisi. Aliquam lobortis.
+      </p>
+      <p class="about-bottom-text">
+        <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+        <span>Will sharpen your brain and focus</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+        <!-- 
+          - #TOURNAMENT
+        -->
+
+        <section class="tournament" id="tournament">
+          <div class="container">
+            <!-- Tournament Content -->
+            <div class="tournament-content">
+              <p class="tournament-subtitle animate-text">Check out our next</p>
+              <h2 class="h3 tournament-title animate-text">Gaming Tournaments!</h2>
+              <p class="tournament-text">
+                Join the best gaming battles! Experience thrilling competitions and win amazing rewards.
+              </p>
+              <div class="btn-box">
+                <button class="btn btn-pc" id="pc-tournament-btn">PC Tournament</button>
+                <button class="btn btn-phone" id="phone-tournament-btn">Phone Tournament</button>
+              </div>
+            </div>
+        
+            <!-- Tournament Options -->
+            <div id="tournament-options" class="tournament-options">
+              <button class="btn btn-free" id="free-tournament-btn" onclick="navigateTo('freetour.html')">Free Tournament</button>
+              <button class="btn btn-paid" id="paid-tournament-btn" onclick="navigateTo('paidtour.html')">Paid Tournament</button>
+            </div>
+        
+            <!-- Prize Pool -->
+            <div class="tournament-prize">
+              <h2 class="h3 tournament-prize-title">Prize Pool</h2>
+              <data value="80000">৳2,00,000</data>
+              <figure>
+                <img src="./assets/images/prize-img.png" alt="Prize image">
+              </figure>
+            </div>
+        
+            <!-- Last Winners -->
+            <div class="tournament-winners">
+              <h2 class="h3 tournament-winners-title">Last Winners</h2>
+              <ul class="tournament-winners-list">
+                <li>
+                  <div class="winner-card">
+                    <figure class="card-banner">
+                      <img src="./assets/images/winner-img-1.png" alt="Winner image">
+                    </figure>
+                    <h3 class="h5 card-title">1st place</h3>
+                  </div>
+                </li>
+                <li>
+                  <div class="winner-card">
+                    <figure class="card-banner">
+                      <img src="./assets/images/winner-img-2.png" alt="Winner image">
+                    </figure>
+                    <h3 class="h5 card-title">2nd place</h3>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+<!-- Events Section -->
+<section id="events-section" class="events">
+  <div class="container">
+    <h2 class="section-title">Upcoming Gaming Events</h2>
+
+    <div class="event-card">
+      <h3 class="event-title">Battle Royale Tournament</h3>
+      <p class="event-date">Date: January 15, 2024</p>
+      <div class="event-details">
+        <h4>Rules:</h4>
+        <ul class="rules-list">
+          <li>Maximum 4 players per team.</li>
+          <li>No use of hacks or cheats.</li>
+          <li>All matches will be played in First-Person Mode.</li>
+          <li>Respect the referee's decisions.</li>
+        </ul>
+
+        <h4>Prizes:</h4>
+        <ul class="prize-list">
+          <li>1st Place: ৳80,000</li>
+          <li>2nd Place: ৳50,000</li>
+          <li>3rd Place: ৳30,000</li>
+        </ul>
+
+        <a href="#register" class="btn register-btn">Register Now</a>
+      </div>
+    </div>
+
+    <!-- Add more event cards as needed -->
+    <div class="event-card">
+      <h3 class="event-title">Pro League Gaming Night</h3>
+      <p class="event-date">Date: February 10, 2024</p>
+      <div class="event-details">
+        <h4>Rules:</h4>
+        <ul class="rules-list">
+          <li>Solo players only.</li>
+          <li>Bring your own gaming gear.</li>
+          <li>30-minute time limit per match.</li>
+          <li>No abusive language or behavior.</li>
+        </ul>
+
+        <h4>Prizes:</h4>
+        <ul class="prize-list">
+          <li>1st Place: ৳80,000</li>
+          <li>2nd Place: ৳50,000</li>
+          <li>3rd Place: ৳30,000</li>
+        </ul>
+
+        <a href="#register" class="btn register-btn">Register Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+        
+<!-- GALLERY SECTION -->
+<section class="gallery">
+  <div class="container">
+    <h2 class="h2 section-title text-center">E-sports Tournament Gallery</h2>
+    <p class="section-subtitle text-center">A creative twist on "TOURNAMENT" with a modern, techy feel, perfect for organizing events.</p>
+
+    <div class="gallery-carousel">
+      <!-- Gallery Item 1 -->
+      <div class="gallery-item active">
+        <img src="./assets/images/gallery-img-1.png" alt="Epic Battle Moment">
+        <p class="caption">PUBG</p>
+      </div>
+
+      <!-- Gallery Item 2 -->
+      <div class="gallery-item">
+        <img src="./assets/images/gallery-img-2.jpg" alt="Victory Celebration">
+        <p class="caption">Victory Celebration</p>
+      </div>
+
+      <!-- Gallery Item 3 -->
+      <div class="gallery-item">
+        <img src="./assets/images/gallery-img-3.jpg" alt="Unstoppable Teamwork">
+        <p class="caption">Unstoppable Teamwork</p>
+      </div>
+
+      <!-- Gallery Item 4 -->
+      <div class="gallery-item">
+        <img src="./assets/images/gallery-img-4.png" alt="Clutch Moment">
+        <p class="caption">Clutch Moment</p>
+      </div>
+
+      <!-- Gallery Item 5 -->
+      <div class="gallery-item">
+        <img src="./assets/images/FC24_.jpg" alt="FC24 Game Moment">
+        <p class="caption">FC24 Game Moment</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Top-Up  -->
+<section class="gaming-topup" id="gaming-topup">
+  <div class="container">
+    <h2 class="topup-title">⚡ Gaming Top-Up ⚡</h2>
+    <p class="topup-description">Level up your gaming experience with instant top-ups for your favorite games!</p>
+    <div class="game-options">
+      <div class="game-card">
+        <img src="/assets/images/ff.jpg" alt="Game 1">
+        <h3>Free Fire</h3>
+        <p>Recharge and dominate the battlefield!</p>
+        <a href="free.html" class="topup-btn">Top Up</a>
+      </div>
+      
+      <div class="game-card">
+        <img src="/assets/images/pb.jpg" alt="Game 2">
+        <h3>PUBG Mobile</h3>
+        <p>Enhance your adventure with bonus credits!</p>
+        <a href="pub.html" class="topup-btn">Top Up</a>
+      </div>
+      <div class="game-card">
+        <img src="/assets/images/coc.jpeg" alt="Game 3">
+        <h3>COC</h3>
+        <p>Fuel your mission to the stars!</p>
+        <a href="coc.html" class="topup-btn">Top Up</a>
+      </div>
+      <div class="game-card">
+        <img src="assets/images/fifa.jpg" alt="Game 3">
+        <h3>FIFA Mobile</h3>
+        <p>Fuel your mission to the stars!</p>
+        <a href="fifa.html" class="topup-btn">Top Up</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM SECTION -->
+<section class="teams" id="teams">
+  <div class="container">
+    <!-- Section 1: Tournament Winners -->
+    <h2 class="h2 section-title text-center">Winners of Previous Tournaments</h2>
+    <div class="team-section">
+      <div class="team-box">
+        <div class="sticker">1st</div>
+        <img class="squad-logo" src="./assets/images/team-member-1.png" alt="Logo of The Invincibles">
+        <h3 class="team-name">The Invincibles</h3>
+        <p><strong>Leader:</strong> Alex "The Phantom"</p>
+        <p><strong>Squad Name:</strong> Phantom Troopers</p>
+        <p><strong>Guild Name:</strong> Shadow Guild</p>
+      </div>
+      <div class="team-box">
+        <div class="sticker">2nd</div>
+        <img class="squad-logo" src="./assets/images/team-member-2.png" alt="Logo of Venom Strike">
+        <h3 class="team-name">Venom Strike</h3>
+        <p><strong>Leader:</strong> Sam "Viper"</p>
+        <p><strong>Squad Name:</strong> Viper Commandos</p>
+        <p><strong>Guild Name:</strong> Cobra Clan</p>
+      </div>
+      <div class="team-box">
+        <div class="sticker">3rd</div>
+        <img class="squad-logo" src="./assets/images/team-member-3.png" alt="Logo of Blaze Warriors">
+        <h3 class="team-name">Blaze Warriors</h3>
+        <p><strong>Leader:</strong> Jamie "Blaze"</p>
+        <p><strong>Squad Name:</strong> Flame Rangers</p>
+        <p><strong>Guild Name:</strong> Phoenix Order</p>
+      </div>
+    </div>
+    <!-- Section 2: Tournament Winners -->
+    <h2 class="h2 section-title text-center">Winners of Previous Tournaments</h2>
+    <div class="team-section">
+      <div class="team-box">
+        <div class="sticker">1st</div>
+        <img class="squad-logo" src="./assets/images/team-member-4.png" alt="Logo of The Invincibles">
+        <h3 class="team-name">The Invincibles</h3>
+        <p><strong>Leader:</strong> Alex "The Phantom"</p>
+        <p><strong>Squad Name:</strong> Phantom Troopers</p>
+        <p><strong>Guild Name:</strong> Shadow Guild</p>
+      </div>
+      <div class="team-box">
+        <div class="sticker">2nd</div>
+        <img class="squad-logo" src="./assets/images/team-member-5.png" alt="Logo of Venom Strike">
+        <h3 class="team-name">Venom Strike</h3>
+        <p><strong>Leader:</strong> Sam "Viper"</p>
+        <p><strong>Squad Name:</strong> Viper Commandos</p>
+        <p><strong>Guild Name:</strong> Cobra Clan</p>
+      </div>
+      <div class="team-box">
+        <div class="sticker">3rd</div>
+        <img class="squad-logo" src="./assets/images/team-member-6.png" alt="Logo of Blaze Warriors">
+        <h3 class="team-name">Blaze Warriors</h3>
+        <p><strong>Leader:</strong> Jamie "Blaze"</p>
+        <p><strong>Squad Name:</strong> Flame Rangers</p>
+        <p><strong>Guild Name:</strong> Phoenix Order</p>
+      </div>
+    </div>
+
+    <!-- Additional Sections (Hidden by Default) -->
+    <div id="additional-sections" class="hidden">
+      <h2 class="h2 section-title text-center">Champions of Second Tournament</h2>
+      <div class="team-section">
+        <div class="team-box">
+          <div class="sticker">1st</div>
+          <img class="squad-logo" src="./assets/images/team-member-7.png" alt="Logo of Shadow Reapers">
+          <h3 class="team-name">Shadow Reapers</h3>
+          <p><strong>Leader:</strong> Chris "Shadow"</p>
+          <p><strong>Squad Name:</strong> Reaper Squad</p>
+          <p><strong>Guild Name:</strong> Darkness Elite</p>
+        </div>
+        <div class="team-box">
+          <div class="sticker">2nd</div>
+          <img class="squad-logo" src="./assets/images/team-member-8.png" alt="Logo of Doom Legion">
+          <h3 class="team-name">Doom Legion</h3>
+          <p><strong>Leader:</strong> Morgan "Doom"</p>
+          <p><strong>Squad Name:</strong> Legion Warriors</p>
+          <p><strong>Guild Name:</strong> Doom Syndicate</p>
+        </div>
+        <div class="team-box">
+          <div class="sticker">3rd</div>
+          <img class="squad-logo" src="./assets/images/team-member-9.png" alt="Logo of Inferno Clan">
+          <h3 class="team-name">Inferno Clan</h3>
+          <p><strong>Leader:</strong> Taylor "Inferno"</p>
+          <p><strong>Squad Name:</strong> Inferno Flames</p>
+          <p><strong>Guild Name:</strong> Eternal Fire</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- View All Button -->
+    <div class="text-center">
+      <button id="view-all-btn" class="btn btn-primary" aria-label="View All Teams">View All Teams</button>
+    </div>
+  </div>
+</section>
+
+
+        <!-- 
+          - #GEARS
+        -->
+        <section class="gears" id="gears">
+          <div class="container">
+            <h2 class="h2 section-title">Check Our Gears</h2>
+        
+            <ul class="gears-list">
+              <!-- Gear Item 1 -->
+              <li class="gear-item">
+                <div class="gears-card">
+                  <div class="card-banner">
+                    <a href="#">
+                      <img src="./assets/images/gears-img-1.png" alt="Headphone" />
+                    </a>
+                    <button class="share">
+                      <ion-icon name="share-social"></ion-icon>
+                    </button>
+                    <div class="card-time-wrapper">
+                      <ion-icon name="time-outline"></ion-icon>
+                      <span>In 4 days</span>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="card-title-wrapper">
+                      <h3 class="h3 card-title">Headphone</h3>
+                      <p class="card-subtitle">E-sports</p>
+                    </div>
+                    <div class="card-prize">৳1015</div>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn btn-primary">
+                      <ion-icon name="add-outline"></ion-icon>
+                      <span>Add to cart</span>
+                    </button>
+                    <button class="btn card-btn">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              </li>
+        
+              <!-- Gear Item 2 -->
+              <li class="gear-item">
+                <div class="gears-card">
+                  <div class="card-banner">
+                    <a href="#">
+                      <img src="./assets/images/gears-img-2.png" alt="Controller" />
+                    </a>
+                    <button class="share">
+                      <ion-icon name="share-social"></ion-icon>
+                    </button>
+                    <div class="card-time-wrapper">
+                      <ion-icon name="time-outline"></ion-icon>
+                      <span>In 4 days</span>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="card-title-wrapper">
+                      <h3 class="h3 card-title">Controller</h3>
+                      <p class="card-subtitle">E-sports</p>
+                    </div>
+                    <div class="card-prize">৳815</div>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn btn-primary">
+                      <ion-icon name="add-outline"></ion-icon>
+                      <span>Add to cart</span>
+                    </button>
+                    <button class="btn card-btn">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              </li>
+        
+              <!-- Gear Item 3 -->
+              <li class="gear-item">
+                <div class="gears-card">
+                  <div class="card-banner">
+                    <a href="#">
+                      <img src="./assets/images/gears-img-3.png" alt="Gaming mask" />
+                    </a>
+                    <button class="share">
+                      <ion-icon name="share-social"></ion-icon>
+                    </button>
+                    <div class="card-time-wrapper">
+                      <ion-icon name="time-outline"></ion-icon>
+                      <span>In 4 days</span>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="card-title-wrapper">
+                      <h3 class="h3 card-title">Mechanical Keyboard</h3>
+                      <p class="card-subtitle">E-sports</p>
+                    </div>
+                    <div class="card-prize">৳2300</div>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn btn-primary">
+                      <ion-icon name="add-outline"></ion-icon>
+                      <span>Add to cart</span>
+                    </button>
+                    <button class="btn card-btn">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              </li>
+              <!-- Gear Item 2 -->
+              <li class="gear-item">
+                <div class="gears-card">
+                  <div class="card-banner">
+                    <a href="#">
+                      <img src="./assets/images/mu.png" alt="Controller" />
+                    </a>
+                    <button class="share">
+                      <ion-icon name="share-social"></ion-icon>
+                    </button>
+                    <div class="card-time-wrapper">
+                      <ion-icon name="time-outline"></ion-icon>
+                      <span>In 4 days</span>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="card-title-wrapper">
+                      <h3 class="h3 card-title">LG Mouse</h3>
+                      <p class="card-subtitle">E-sports</p>
+                    </div>
+                    <div class="card-prize">৳1999</div>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn btn-primary">
+                      <ion-icon name="add-outline"></ion-icon>
+                      <span>Add to cart</span>
+                    </button>
+                    <button class="btn card-btn">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              </li>
+        
+        <!-- Gear Item 5 -->
+        <li class="gear-item">
+          <div class="gears-card">
+            <div class="card-banner">
+              <a href="#">
+                <img src="./assets/images/musp.png" alt="Gaming mask" />
+              </a>
+              <button class="share">
+                <ion-icon name="share-social"></ion-icon>
+              </button>
+              <div class="card-time-wrapper">
+                <ion-icon name="time-outline"></ion-icon>
+                <span>In 4 days</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-title-wrapper">
+                <h3 class="h3 card-title">Mouse Pad</h3>
+                <p class="card-subtitle">E-sports</p>
+              </div>
+              <div class="card-prize">৳600</div>
+            </div>
+            <div class="card-actions">
+              <button class="btn btn-primary">
+                <ion-icon name="add-outline"></ion-icon>
+                <span>Add to cart</span>
+              </button>
+              <button class="btn card-btn">
+                <ion-icon name="heart-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
+        </li>
+     <!-- Gear Item 2 -->
+     <li class="gear-item">
+      <div class="gears-card">
+        <div class="card-banner">
+          <a href="#">
+            <img src="./assets/images/keyp.png" alt="Controller" />
+          </a>
+          <button class="share">
+            <ion-icon name="share-social"></ion-icon>
+          </button>
+          <div class="card-time-wrapper">
+            <ion-icon name="time-outline"></ion-icon>
+            <span>In 4 days</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-title-wrapper">
+            <h3 class="h3 card-title">Keyboard Pad</h3>
+            <p class="card-subtitle">E-sports</p>
+          </div>
+          <div class="card-prize">৳800</div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary">
+            <ion-icon name="add-outline"></ion-icon>
+            <span>Add to cart</span>
+          </button>
+          <button class="btn card-btn">
+            <ion-icon name="heart-outline"></ion-icon>
+          </button>
+        </div>
+      </div>
+    </li>
+
+            </ul>
+          </div>
+        </section>
+ 
+<!---------
+-----------
+ organizer-team" Section
+ ----------- -->
+ <section class="organizer-team" id="organization-team">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="team-header">
+      <h2 class="team-title">Meet the Team Behind the Action</h2>
+      <p class="team-subtitle">The driving forces that make every tournament unforgettable.</p>
+    </div>
+
+    <!-- Team Sections -->
+    <div class="team-sections">
+      <!-- Organizers -->
+      <div class="team-group">
+        <h3 class="team-group-title">Organizers</h3>
+        <div class="team-grid">
+          <div class="team-card">
+            <img src="./assets/images/CEO.jpg" alt="Organizer 1" class="team-img">
+            <h4 class="team-name">Hasibul Hassan Shanto</h4>
+            <p class="team-role">Lead Organizer</p>
+          </div>
+          <div class="team-card">
+            <img src="./assets/images/pr.jpg" alt="Organizer 2" class="team-img">
+            <h4 class="team-name">MD Ariful Islam</h4>
+            <p class="team-role">Event Manager</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Casters -->
+      <div class="team-group">
+        <h3 class="team-group-title">Casters</h3>
+        <div class="team-grid">
+          <div class="team-card">
+            <img src="./assets/images/sus.jpg" alt="Caster 1" class="team-img">
+            <h4 class="team-name">Susmita  Sarker</h4>
+            <p class="team-role">Play-by-Play Caster</p>
+          </div>
+          <div class="team-card">
+            <img src="./assets/images/dp.jpg" alt="Caster 2" class="team-img">
+            <h4 class="team-name">Dipa Roy</h4>
+            <p class="team-role">Analyst Caster</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sponsors -->
+      <div class="team-group">
+        <h3 class="team-group-title">Sponsors</h3>
+        <div class="team-grid sponsors">
+          <img src="./assets/images/nub.png" alt="Sponsor 1">
+          <img src="./assets/images/upu.png" alt="Sponsor 2">
+          <img src="./assets/images/nubcc_logo.png" alt="Sponsor 3">
+        </div>
+      </div>
+
+      <!-- Production -->
+      <div class="team-group">
+        <h3 class="team-group-title">Production Crew</h3>
+        <div class="team-grid">
+          <div class="team-card">
+            <img src="./assets/images/ru.jpg" alt="Producer" class="team-img">
+            <h4 class="team-name">Rupu</h4>
+            <p class="team-role">Broadcast Director</p>
+          </div>
+          <div class="team-card">
+            <img src="./assets/images/video Editor.jpg" alt="Producer" class="team-img">
+            <h4 class="team-name">Shabbir Ahmed Shakib</h4>
+            <p class="team-role">Video Editor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ...................
+ .......................
+ Contact Form section
+ .........................
+ ....................... -->
+  <section id="contact" class="contact-section">
+    <div class="animated-bg"></div>
+    <div class="container">
+      <h2 class="section-title animate-text">Contact Us</h2>
+      <p class="section-subtitle animate-text">
+        Got questions or want to team up? Let's connect!
+      </p>
+  
+      <div class="contact-wrapper">
+        <!-- Contact Form -->
+        <form action="#" method="post" class="contact-form animate-fade">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Your Name" required class="input-field">
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Your Email" required class="input-field">
+          </div>
+          <div class="form-group">
+            <textarea name="message" rows="5" placeholder="Your Message" required class="input-field"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+  
+        <!-- Contact Details -->
+        <div class="contact-details animate-slide">
+          <h3 class="contact-details-title">Reach Out</h3>
+          <ul class="contact-info-list">
+            <li><ion-icon name="mail-outline"></ion-icon> smshanto190@gmail.com</li>
+            <li><ion-icon name="call-outline"></ion-icon> +880 1909-419879</li>
+            <li><ion-icon name="location-outline"></ion-icon> Ashiyan City Rd, Dhaka 1230</li>
+          </ul>
+  
+          <div class="social-links">
+            <a href="#" class="social-link"><ion-icon name="logo-discord"></ion-icon></a>
+            <a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a>
+            <a href="#" class="social-link"><ion-icon name="logo-youtube"></ion-icon></a>
+            <a href="#" class="social-link"><ion-icon name="logo-twitch"></ion-icon></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+ <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <!-- Footer Brand Logo -->
+      <div class="footer-brand-wrapper">
+        <img src="assets/images/logo2.png" alt="Gaming Logo" class="logo">
+      </div>
+
+      <!-- Footer Menu Links -->
+      <div class="footer-menu-list">
+        <a href="#" class="footer-menu-link">Home</a>
+        <a href="#about" class="footer-menu-link">About</a>
+        <a href="#tournaments" class="footer-menu-link">Tournaments</a>
+        <a href="#contact" class="footer-menu-link">Contact</a>
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="footer-social-list">
+        <a href="#" class="footer-social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <!-- Newsletter Input Section -->
+      <div class="footer-input-wrapper">
+        <input type="email" class="footer-input" placeholder="Subscribe for Updates">
+        <button class="btn-primary">Subscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom Section -->
+  <div class="footer-bottom">
+    <div class="container">
+      <p class="copyright">© 2024 Shanto | All Rights Reserved</p>
+    </div>
+  </div>
+</footer>
+
+  
+  <!-- 
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top" aria-label="Go to Top">
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </a>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

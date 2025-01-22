@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Top-Up Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            color: #28a745;
+            border-bottom: 2px solid #28a745;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .input-group {
+            margin: 10px 0;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .recharge-options, .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .option {
+            padding: 10px 15px;
+            background: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            flex: 1 1 calc(33.333% - 10px);
+        }
+
+        .option:hover {
+            background: #e9e9e9;
+            border-color: #28a745;
+        }
+
+        .option.selected {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #28a745;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #28a745;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .payment-details {
+            display: none;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            background: #f9f9f9;
+        }
+
+        .payment-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .payment-details p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Account Info Section -->
+    <div class="section">
+        <h2>Account Info</h2>
+        <div class="input-group">
+            <label for="player-id">Player ID</label>
+            <input type="text" id="player-id" placeholder="Enter player ID">
+        </div>
+    </div>
+
+    <!-- Recharge Options Section -->
+    <div class="section">
+        <h2>Select Recharge</h2>
+        <div class="recharge-options">
+            <div class="option" data-value="25">25 Gems ৳25</div>
+            <div class="option" data-value="50">50 Gems ৳40</div>
+            <div class="option" data-value="115">115 Gems ৳80</div>
+            <div class="option" data-value="240">240 Gems ৳160</div>
+            <div class="option" data-value="610">610 Event Pass ৳410</div>
+            <div class="option" data-value="1240">1240 Gold Pass ৳820</div>
+        </div>
+    </div>
+
+    <!-- Payment Methods Section -->
+    <div class="section">
+        <h2>Select Payment</h2>
+        <div class="payment-methods">
+            <div class="option" data-method="bkash">bKash</div>
+            <div class="option" data-method="nagad">Nagad</div>
+            <div class="option" data-method="rocket">Rocket</div>
+        </div>
+    </div>
+
+    <!-- Payment Details Section -->
+    <div class="payment-details" id="payment-details">
+        <h3>Payment Information</h3>
+        <p><strong>bKash Account:</strong> 017XXXXXXXX</p>
+        <p><strong>Nagad Account:</strong> 018XXXXXXXX</p>
+        <p><strong>Rocket Account:</strong> 019XXXXXXXX</p>
+        <div class="input-group">
+            <label for="sender-number">Sender's Mobile Number</label>
+            <input type="text" id="sender-number" placeholder="Enter your mobile number">
+        </div>
+        <div class="input-group">
+            <label for="transaction-id">Transaction ID</label>
+            <input type="text" id="transaction-id" placeholder="Enter the transaction ID">
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button id="proceed-btn">Proceed to Pay</button>
+
+</div>
+
+<footer>
+    <p>&copy; 2025 Gaming Top-Up. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Add selection behavior for options
+    document.querySelectorAll('.option').forEach(option => {
+        option.addEventListener('click', () => {
+            const parent = option.parentElement;
+            parent.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+        });
+    });
+
+    // Show payment details on selecting a payment method
+    document.querySelectorAll('.payment-methods .option').forEach(option => {
+        option.addEventListener('click', () => {
+            document.getElementById('payment-details').style.display = 'block';
+        });
+    });
+
+    // Handle Proceed to Pay button
+    document.getElementById('proceed-btn').addEventListener('click', () => {
+        const playerId = document.getElementById('player-id').value;
+        const selectedRecharge = document.querySelector('.recharge-options .selected');
+        const selectedPayment = document.querySelector('.payment-methods .selected');
+        const senderNumber = document.getElementById('sender-number').value;
+        const transactionId = document.getElementById('transaction-id').value;
+
+        if (!playerId) {
+            alert('Please enter your Player ID.');
+            return;
+        }
+
+        if (!selectedRecharge) {
+            alert('Please select a recharge option.');
+            return;
+        }
+
+        if (!selectedPayment) {
+            alert('Please select a payment method.');
+            return;
+        }
+
+        if (!senderNumber || !transactionId) {
+            alert('Please enter both the sender\'s number and transaction ID.');
+            return;
+        }
+
+        alert(`Player ID: ${playerId}\nRecharge: ${selectedRecharge.textContent}\nPayment Method: ${selectedPayment.textContent}\nSender's Number: ${senderNumber}\nTransaction ID: ${transactionId}\n\nProceeding to payment...`);
+    });
+</script>
+
+</body>
+</html>
